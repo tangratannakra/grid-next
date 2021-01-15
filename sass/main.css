@@ -258,16 +258,47 @@ body {
 
 .home__name {
   grid-column: 1/-1;
+  width: 80%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-bottom: -2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1.25rem;
+  color: white;
+  background-color: #101d2c;
+  z-index: 3;
 }
 
 .home .btn {
   grid-column: 1/-1;
 }
 
+.home__location, .home__rooms, .home__area, .home__price {
+  padding: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .home__location svg, .home__rooms svg, .home__area svg, .home__price svg {
   fill: #c69963;
   height: 2rem;
   width: 2rem;
+}
+
+.home__location p, .home__rooms p, .home__area p, .home__price p {
+  margin-left: 1.5rem;
 }
 
 .gallery {
