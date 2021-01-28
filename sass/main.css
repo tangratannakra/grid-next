@@ -91,6 +91,39 @@ body {
   background-color: #c69963;
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav-btn {
+  border: none;
+  background-color: white;
+  width: 30px;
+  height: 2px;
+  display: block;
+  margin-top: 40px;
+}
+
+.nav-btn:before, .nav-btn::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  display: block;
+  background-color: white;
+}
+
+.nav-btn:before {
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.nav-btn::after {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .header {
