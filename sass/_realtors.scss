@@ -2,7 +2,9 @@
     background-color: $color-secondary;
     grid-column: col-start 7 / full-end;
 
-    padding: 8vw 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h1 {
         text-transform: uppercase;
@@ -16,17 +18,17 @@
 
 .realtors-card {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: max-content max-content;
     grid-template-rows: max-content max-content;
+    column-gap:2rem;
 
     color: $color-grey-light-1;
+    margin: 0 auto;
 
 
     &__img{
         grid-column: 1/2;
         grid-row: 1/-1;
-
-        padding: 2rem;
 
         img {
             width: 7rem;
@@ -55,4 +57,34 @@
         color: $color-grey-light-2;
     }
 
+}
+
+@media screen and (max-width: 767.5px){
+    .realtors {
+        grid-column: 1/-1;
+        padding:10rem 2rem ;
+
+        h1 {
+            width: 100%;
+        }
+    }
+
+    .realtors-card {
+        margin: 2rem auto;
+        column-gap:3rem;
+
+        &__img img{
+            width: 10rem;
+        }
+
+        &__title {
+            font-size:2rem;
+        }
+
+        &__sold{
+            font-size:1.3rem;
+            margin-top:0;
+
+        }
+    }
 }

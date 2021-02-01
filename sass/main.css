@@ -32,6 +32,17 @@ body {
       grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
 
+@media screen and (max-width: 767.5px) {
+  .container {
+    -ms-grid-rows: minmax(max-content, 10vh) minmax(90vh, max-content) auto;
+        grid-template-rows: minmax(-webkit-max-content, 10vh) minmax(90vh, -webkit-max-content) auto;
+        grid-template-rows: minmax(max-content, 10vh) minmax(90vh, max-content) auto;
+  }
+  .container > * {
+    grid-column: 1/-1 !important;
+  }
+}
+
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -126,6 +137,15 @@ body {
           transform: translateY(-10px);
 }
 
+@media screen and (max-width: 767.5px) {
+  .sidebar {
+    grid-column: 1/-1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+}
+
 .header {
   background-color: #101d2c;
   grid-column: full-start / col-end 6;
@@ -157,7 +177,8 @@ body {
 }
 
 .logo img {
-  height: 2.5rem;
+  max-height: 2.5rem;
+  max-width: 100%;
 }
 
 .big-hero {
@@ -249,18 +270,18 @@ body {
 }
 
 @media screen and (max-width: 767.5px) {
-  .partners h2 {
+  .partners {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
-  .partners h2 h2 {
+  .partners h2 {
     width: auto;
   }
 }
 
 .partners__logo {
-  height: 3rem;
-  width: auto;
+  max-height: 2.5rem;
+  max-width: 100%;
   opacity: 0.7;
 }
 
@@ -270,10 +291,40 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    grid-column: 1/-1;
+    -ms-grid-rows: 100px max-content max-content;
+        grid-template-rows: 100px -webkit-max-content -webkit-max-content;
+        grid-template-rows: 100px max-content max-content;
+  }
+  .big-hero {
+    grid-column: 1/-1;
+  }
+  .partners {
+    margin: 4rem 0;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    justify-items: start;
+  }
+  .partners h2 {
+    width: 100%;
+  }
+}
+
 .realtors {
   background-color: #101d2c;
   grid-column: col-start 7 / full-end;
-  padding: 8vw 6vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .realtors h1 {
@@ -288,12 +339,16 @@ body {
 .realtors-card {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: max-content max-content;
+      grid-template-columns: -webkit-max-content -webkit-max-content;
+      grid-template-columns: max-content max-content;
   -ms-grid-rows: max-content max-content;
       grid-template-rows: -webkit-max-content -webkit-max-content;
       grid-template-rows: max-content max-content;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
   color: #f9f7f6;
+  margin: 0 auto;
 }
 
 .realtors-card__img {
@@ -301,7 +356,6 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   grid-row: 1/-1;
-  padding: 2rem;
 }
 
 .realtors-card__img img {
@@ -328,6 +382,31 @@ body {
   text-transform: uppercase;
   font-size: 1rem;
   color: #aaa;
+}
+
+@media screen and (max-width: 767.5px) {
+  .realtors {
+    grid-column: 1/-1;
+    padding: 10rem 2rem;
+  }
+  .realtors h1 {
+    width: 100%;
+  }
+  .realtors-card {
+    margin: 2rem auto;
+    -webkit-column-gap: 3rem;
+            column-gap: 3rem;
+  }
+  .realtors-card__img img {
+    width: 10rem;
+  }
+  .realtors-card__title {
+    font-size: 2rem;
+  }
+  .realtors-card__sold {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
 }
 
 .features {
@@ -366,6 +445,12 @@ body {
 .feature__text {
   font-size: 1.6rem;
   line-height: 2.5rem;
+}
+
+@media screen and (max-width: 767.5px) {
+  .features {
+    padding: 0 4rem;
+  }
 }
 
 .story__pictures {
@@ -438,6 +523,25 @@ body {
 .story__text {
   font-style: italic;
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 767.5px) {
+  .story__img--1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+  }
+  .story__img--2 {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+    grid-column: 3/6;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
+  }
 }
 
 .homes {

@@ -40,3 +40,13 @@ body {
     grid-template-rows: minmax(80vh, max-content) min-content  40vw repeat(3, min-content);
     grid-template-columns:[sidebar-start]8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+
+@media screen and (max-width:767.5px){
+    .container {
+        grid-template-rows:minmax(max-content, 10vh) minmax(90vh, max-content) auto;
+
+        & > * {
+            grid-column: 1/-1!important;
+        }
+    }    
+}
