@@ -334,6 +334,7 @@ body {
   text-align: center;
   letter-spacing: 1px;
   color: #c69963;
+  margin-bottom: 2rem;
 }
 
 .realtors-card {
@@ -348,7 +349,7 @@ body {
   -webkit-column-gap: 2rem;
           column-gap: 2rem;
   color: #f9f7f6;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .realtors-card__img {
