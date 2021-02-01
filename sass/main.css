@@ -301,6 +301,9 @@ body {
   .big-hero {
     grid-column: 1/-1;
   }
+  .big-hero__title {
+    font-size: 3rem;
+  }
   .partners {
     margin: 4rem 0;
     -ms-grid-columns: 1fr 1fr;
@@ -360,7 +363,7 @@ body {
 }
 
 .realtors-card__img img {
-  width: 7rem;
+  width: 10rem;
   height: auto;
   border-radius: 50%;
 }
@@ -397,9 +400,6 @@ body {
     margin: 2rem auto;
     -webkit-column-gap: 3rem;
             column-gap: 3rem;
-  }
-  .realtors-card__img img {
-    width: 10rem;
   }
   .realtors-card__title {
     font-size: 2rem;
@@ -527,6 +527,9 @@ body {
 }
 
 @media screen and (max-width: 767.5px) {
+  .story__content {
+    padding: 6rem 4rem;
+  }
   .story__img--1 {
     -ms-grid-row: 2;
     -ms-grid-row-span: 4;

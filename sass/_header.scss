@@ -128,6 +128,10 @@
 
     .big-hero {
         grid-column: 1/-1;
+
+        &__title {
+            font-size: 3rem;
+        }
     }
 
     .partners {

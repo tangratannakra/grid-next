@@ -32,7 +32,7 @@
         grid-row: 1/-1;
 
         img {
-            width: 7rem;
+            width: 10rem;
             height: auto ;
             border-radius: 50%;
         }
@@ -73,10 +73,6 @@
     .realtors-card {
         margin: 2rem auto;
         column-gap:3rem;
-
-        &__img img{
-            width: 10rem;
-        }
 
         &__title {
             font-size:2rem;
