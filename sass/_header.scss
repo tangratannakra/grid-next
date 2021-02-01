@@ -48,7 +48,7 @@
     }
 
     & .btn {
-        margin: auto 0 auto  0;
+        margin: 4rem 0 auto  0;
         align-self: flex-start;
 
         &:link {
@@ -67,7 +67,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: max-content 1fr;
     justify-items: center;
-    
     align-items: center;
     grid-gap: 10px;
 
@@ -85,6 +84,8 @@
 
         text-transform: uppercase;
         font-size: 1.25rem;
+
+        color: $color-grey-light-2;
 
         &:before, &:after {
             content: '';
