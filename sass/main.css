@@ -243,23 +243,11 @@ body {
           animation: menu-slide-back 500ms ease;
 }
 
-@media screen and (max-width: 767.5px) {
-  .sidebar {
-    grid-column: 1/-1;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-  }
-}
-
 @-webkit-keyframes menu-slide {
   0% {
     display: block;
     opacity: 0;
     width: 0px;
-  }
-  1% {
-    display: block;
   }
   30% {
     opacity: 1;
@@ -274,9 +262,6 @@ body {
     display: block;
     opacity: 0;
     width: 0px;
-  }
-  1% {
-    display: block;
   }
   30% {
     opacity: 1;
@@ -308,6 +293,89 @@ body {
 
 .display-none {
   display: none;
+}
+
+@media screen and (max-width: 767.5px) {
+  .sidebar {
+    grid-column: 1/-1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .nav-btn__label {
+    width: unset;
+    position: fixed;
+    left: 5px;
+    margin-top: 5px;
+    background-color: #c69963;
+    padding: 20px 10px;
+    z-index: 300;
+  }
+  .nav-btn__label span {
+    width: 20px;
+  }
+  .nav-btn__label span:before, .nav-btn__label span::after {
+    width: 20px;
+  }
+  .nav-btn:checked ~ .main-nav {
+    margin-top: 0px;
+    width: 100vw;
+  }
+  .main-nav {
+    left: 0px;
+  }
+  @-webkit-keyframes menu-slide {
+    0% {
+      display: block;
+      opacity: 0;
+      width: 0px;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      width: 100vw;
+    }
+  }
+  @keyframes menu-slide {
+    0% {
+      display: block;
+      opacity: 0;
+      width: 0px;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      width: 100vw;
+    }
+  }
+  @-webkit-keyframes menu-slide-back {
+    0% {
+      width: 100vw;
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.2;
+    }
+    100% {
+      width: 0px;
+      opacity: 0;
+    }
+  }
+  @keyframes menu-slide-back {
+    0% {
+      width: 100vw;
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.2;
+    }
+    100% {
+      width: 0px;
+      opacity: 0;
+    }
+  }
 }
 
 .header {
