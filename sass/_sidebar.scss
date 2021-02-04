@@ -6,35 +6,69 @@
     justify-content: center;
 }
 
-.nav {
-    .nav-btn__label {
-        border: none;
-        background-color: white;
-        width: 30px;
-        height: 2px;
-        display: block;
-        position: fixed;
 
+    
+.nav-btn {
+    display:none;
+
+    &__label {
+        width:30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
         margin-top: 40px;
 
-        &:before,
-        &::after {
-            content: '';
+        span {
+            border: none;
+            background-color: white;
             width: 30px;
             height: 2px;
-            display: block;
-            background-color: white;
-        }
+            display:block;
 
-        &:before {
-            transform: translateY(8px);
-        }
-
-        &::after {
-            transform: translateY(-10px);
+            
+            &:before,
+            &::after {
+                content: '';
+                width: 30px;
+                height: 2px;
+                display: block;
+                background-color: white;
+            }
+        
+            &:before {
+                transform: translateY(8px);
+                transition: all 200ms ease;
+            }
+        
+            &::after {
+                transform: translateY(-10px);
+                transition: all 200ms ease;
+            }
         }
     }
+
+    &:checked ~ &__label {
+        
+        span {
+           background-color: transparent;
+          
+           &:before {
+               transform:translateY(0px) rotate(45deg);
+               transform-origin: center; 
+           }
+
+           &:after {
+               transform:translateY(-2px) rotate(-45deg);
+                transform-origin: center;
+              
+           }
+        }
+
+    } 
 }
+
 
 .main-nav{
     width: 0;
@@ -45,7 +79,7 @@
     z-index: 100;
 
     background-color: $color-primary;
-    box-shadow: 3px 0px 3px rgba(0,0,0,0.2), 5px 0px 10px rgba(0,0,0,0.3);
+    box-shadow: 1px 0px 1px rgba(0,0,0,0.2), 8px 0px 8px rgba(0,0,0,0.3);
 
     &__list {
         display:flex;
@@ -60,7 +94,24 @@
     }
 
     &__item {
-        // width: 100%;
+        min-width: 30%;
+    }
+
+    &__link{
+        text-decoration: none;
+        text-align: center;
+        
+
+        &:link,&:visited {
+            color:white;
+            padding: 2rem;
+
+            transition: all 500ms ease;
+
+            &:hover {
+                transform:scale(1.1);
+            }
+        }
     }
 }
 
